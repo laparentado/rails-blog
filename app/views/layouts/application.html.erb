@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Lori's Rails Blog</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <nav>
+      <%= link_to "home", root_path %>
+
+
+      <% if logged_in? %>
+      <%= link_to "post a blog", new_blog_path %>
+      <%= link_to "log out", "/logout", {method: "post"} %><br>
+      Logged In As: <a href="/users/<%= current_user.id %>"><%= current_user.username %></a>
+      <% end %>
+      <% if !logged_in? %>
+      <%= link_to "sign up", new_user_path %>
+      <%= link_to "log in", login_path %>
+      <% end %>
+    </nav>
+
+    <%= yield %>
+  </body>
+</html>

@@ -1,0 +1,8 @@
+<h3>Title: <%= @blog.title %></h3>
+<%= @blog.content %><hr>
+<% if current_user.id == @blog.user_id%>
+<%= link_to "edit blog", edit_blog_path %><Br>
+<%= link_to "delete blog", blog_path, method: :delete,
+                                          data: {confirm: "are you sure? you cannot undo this action."}
+  %>
+<% end %>
