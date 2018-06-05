@@ -5,12 +5,14 @@ class ApplicationController < ActionController::Base
     @current_user = User.find_by_id(session[:user_id])
   end
 
+
+
   def logged_in?
     current_user != nil
   end
 
 #makes all methods available in views not just controllers
-  helper_method :current_user, :logged_in?
+  helper_method :current_user, :logged_in?, :current_blog
 
 
 end

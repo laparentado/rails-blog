@@ -7,23 +7,28 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link href="https://fonts.googleapis.com/css?family=Copse|Amatic+SC" rel="stylesheet">
+
   </head>
 
   <body>
-    <nav>
+    <div id="nav">
       <%= link_to "home", root_path %>
 
 
       <% if logged_in? %>
-      <%= link_to "post a blog", new_blog_path %>
-      <%= link_to "log out", "/logout", {method: "post"} %><br>
-      Logged In As: <a href="/users/<%= current_user.id %>"><%= current_user.username %></a>
+      • <%= link_to "post a blog", new_blog_path %>
+      • <%= link_to "log out", "/logout", {method: "post"} %><br>
+
       <% end %>
       <% if !logged_in? %>
-      <%= link_to "sign up", new_user_path %>
-      <%= link_to "log in", login_path %>
+      • <%= link_to "sign up", new_user_path %>
+      • <%= link_to "log in", login_path %>
       <% end %>
-    </nav>
+    </div>
+    <% if logged_in? %>
+    Logged In As: <a href="/users/<%= current_user.id %>"><%= current_user.username %></a>
+    <% end %>
 
     <%= yield %>
   </body>

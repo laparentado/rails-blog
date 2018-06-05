@@ -1,8 +1,22 @@
-<h3>Title: <%= @blog.title %></h3>
+<h2><%= @blog.title %></h2>
 <%= @blog.content %><hr>
 <% if current_user.id == @blog.user_id%>
 <%= link_to "edit blog", edit_blog_path %><Br>
 <%= link_to "delete blog", blog_path, method: :delete,
                                           data: {confirm: "are you sure? you cannot undo this action."}
   %>
+<% end %><br>
+<%= form_for([@blog, @blog.comments.build]) do |f| %>
+<%= f.text_field :content %><br />
+<%= f.submit "post comment" %>
+<% end %>
+<h4>Comments</h4>
+<% @blog.comments.each do |c| %>
+<%= c.content %>
+<br>
+<% if current_user.id == c.user_id %>
+<div id="link"><a href="/blogs/<%=@blog.id%>/comments/<%=c.id%>/edit">edit comment</a>
+</div>
+<% end %>
+<hr>
 <% end %>

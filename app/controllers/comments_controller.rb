@@ -8,26 +8,44 @@ class CommentsController < ApplicationController
   end
 
   def create
-    comment = Comment.new(comment_params)
-    comment.user_id = current_user.id
-    
-    if comment.save
-      redirect_to "/"
+    @blog = Blog.find(params[:blog_id])
+    @comment = current_user.comments.new(comment_params)
+    @comment.blog = @blog
+    if (@comment.save)
+      redirect_to @blog
     else
-      render "/blogs/new"
+      render "/"
     end
   end
 
   def show
     @comment = Comment.find(params[:id])
-
   end
 
   def edit
+    @blog = Blog.find(params[:blog_id])
+    @comment = Comment.find(params[:id])
+  end
+
+
+  def update
+    @comment = Comment.find(params[:id])
+    if(@comment.update(comment_params))
+      redirect_to "/"
+    else
+      render "/users"
+    end
+  end
+
+  def destroy
+    @blog = Blog.find(params[:blog_id])
+    @comment = Comment.find(params[:id])
+    @comment.destroy
+    redirect_to "/"
   end
 
   private
   def comment_params
-    params.require(:comment).permit(:content, :user_id, :blog_id)
+    params.require(:comment).permit(:content, :blog_id, :user_id)
   end
 end
