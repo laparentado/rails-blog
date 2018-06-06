@@ -5,7 +5,8 @@ Username: <%= @user.username %><br>
 Title: <%= b.title %><br>
 <%= b.content %><hr>
 <% end %>
+<% if logged_in? && current_user.id == @user.id %>
 <%= link_to "edit user", edit_user_path %><Br>
 <%= link_to "destroy user", user_path, method: :delete,
                                           data: {confirm: "are you sure? you cannot undo this action."}
-  %>
+  %><% end %>

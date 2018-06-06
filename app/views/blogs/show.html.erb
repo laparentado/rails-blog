@@ -12,14 +12,23 @@
 <%= f.submit "post comment" %>
 <% end %>
 <% end %>
+
+
 <h4>Comments</h4>
 <% @blog.comments.each do |c| %>
 <%= c.content %><br>
-posted by: <%= c.user_id %>
-<br>
-<% if logged_in? && current_user.id == c.user_id %>
-<div id="link"><a href="/blogs/<%=@blog.id%>/comments/<%=c.id%>/edit">edit comment</a>
-</div>
+<% if c.id == nil %>
+<% c.user_id = 0 %>
+<% else %>
+<%= c.user.username %>
 <% end %>
-<hr>
+
+
+<br>
+    <% if logged_in? && current_user.id == c.user_id %>
+    <div id="link"><a href="/blogs/<%=@blog.id%>/comments/<%=c.id%>/edit">edit comment</a>
+    </div>
+
+    <hr>
+    <% end %>
 <% end %>
