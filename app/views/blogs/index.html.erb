@@ -1,8 +1,10 @@
 <h1>Blog Posts</h1>
+<div class="blogs">
 <% @blogs.each do |b|%>
-<div><a href="/blogs/<%= b.id %>"><%= b.title %></a><br>
+<a href="/blogs/<%= b.id %>"><%= b.title %></a><br>
 <%= b.content %><br>
 <% id = b.user_id %>
 by: <%= User.find(id).username %>
-</div><hr>
+<hr>
 <% end %>
+</div>

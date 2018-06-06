@@ -1,31 +1,44 @@
-.nav{
-  font-family: Amatic SC;
-  font-size: 40px;
-
+.wrapper{
+  grid-template-columns: 1fr 1fr 1fr;
+  border: 1px solid red;
+  width: 1070px;
 }
+.head{
+  grid-column-start: 1;
+  grid-column-end: 2;
+  // display: inline-block;
+  margin-left: 20px;
+}
+nav{
+  grid-column-start: 2;
+  // grid-column-end: 3;
+  // font-family: $secondary-font;
+  font-size: 20px;
+  text-transform: uppercase;
+  text-align: center;
+  display: inline-block;
+  margin-left: 200px;
+}
+.current{
+  grid-column-start: 3;
+  grid-column-end: 4;
+  margin-left: 270px;
+  display: inline-block;
+  font-size: 15px;
+}
+
 a:link{
   color: red;
   text-decoration: none;
-  font-family: Amatic SC;
-  font-size: 25px;
+  // font-family: $secondary-font;
+  font-size: 20px;
+  text-transform: uppercase
 }
 
 a:visited{
   color: red;
   text-decoration: none;
-  font-family: Amatic SC;
-  font-size: 25px;
-}
-
-h1, h2, h3, h4, h5{
-  font-family: Amatic SC;
-}
-
-body{
-  font-family: Copse;
-  font-size: 12px;
-}
-
-.link{
+  // font-family: $secondary-font;
   font-size: 20px;
+  text-transform: uppercase
 }

@@ -12,7 +12,7 @@ class CommentsController < ApplicationController
     @comment = current_user.comments.new(comment_params)
     @comment.blog = @blog
     if (@comment.save)
-      redirect_to @blog
+      redirect_to "/blogs/#{params[:blog_id]}"
     else
       render "/"
     end
@@ -31,7 +31,7 @@ class CommentsController < ApplicationController
   def update
     @comment = Comment.find(params[:id])
     if(@comment.update(comment_params))
-      redirect_to "/"
+      redirect_to "/blogs/#{params[:blog_id]}"
     else
       render "/users"
     end
@@ -41,7 +41,7 @@ class CommentsController < ApplicationController
     @blog = Blog.find(params[:blog_id])
     @comment = Comment.find(params[:id])
     @comment.destroy
-    redirect_to "/"
+    redirect_to @blog
   end
 
   private

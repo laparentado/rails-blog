@@ -13,3 +13,8 @@
  *= require_tree .
  *= require_self
  */
+@import "main.scss";
+@import "variables.scss";
+@import "nav.scss";
+@import "blogs.scss";
+@import "body.scss";

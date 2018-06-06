@@ -7,12 +7,12 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <link href="https://fonts.googleapis.com/css?family=Copse|Amatic+SC" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Copse|Oswald" rel="stylesheet">
 
   </head>
 
-  <body>
-    <div id="nav">
+  <body><div class="wrapper"><div class="head"><h1>Lori's Rails Blog</h1></div>
+    <nav>
       <%= link_to "home", root_path %>
 
 
@@ -25,11 +25,11 @@
       • <%= link_to "sign up", new_user_path %>
       • <%= link_to "log in", login_path %>
       <% end %>
-    </div>
+    </nav>
     <% if logged_in? %>
-    Logged In As: <a href="/users/<%= current_user.id %>"><%= current_user.username %></a>
+    <div class="current">Logged In As: <a href="/users/<%= current_user.id %>"><%= current_user.username %></a></div></div>
     <% end %>
-
-    <%= yield %>
+<div class="yield">
+    <%= yield %></div>
   </body>
 </html>
