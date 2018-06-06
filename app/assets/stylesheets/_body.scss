@@ -1,19 +1,19 @@
 h1, h2, h3, h4, h5{
-  font-family: $secondary-font;
+  font-family: Oswald;
   text-transform: uppercase;
-  color: $light-accent;
+  color: #F18881;
 }
 
 body{
-  font-family: $main-font;
+  font-family: Copse;
   font-size: 13px;
-  background-color: $background-color;
+  background-color: #36332F;
 }
 
 .yield{
-  background-color: $light-color;
+  background-color: #FDFDFD;
   border-radius: 12px;
-  border: 1px solid $main-color;
+  border: 1px solid #A09E95;
   width: 1070px;
-  padding: 12px; 
+  padding: 12px;
 }
