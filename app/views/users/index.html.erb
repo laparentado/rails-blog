@@ -1,5 +1,4 @@
 <h1>List of Users</h1>
 <% @users.each do |u| %>
 Username: <a href="/users/<%= u.id %>"><%= u.username %></a><br>
-Email: <%= u.email %><hr>
 <% end %>

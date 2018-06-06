@@ -1,7 +1,6 @@
 <h2>User Profile Page</h2>
 Username: <%= @user.username %><br>
-Email: <%= @user.email %><br>
-<img src="<%=@user.pic%>"><hr>
+<hr>
 <% @user.blogs.each do |b| %>
 Title: <%= b.title %><br>
 <%= b.content %><hr>
