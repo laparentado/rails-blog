@@ -16,11 +16,11 @@
 
 <h4>Comments</h4>
 <% @blog.comments.each do |c| %>
-<%= c.content %><br>
 <% if c.id == nil %>
 <% c.user_id = 0 %>
 <% else %>
-<%= c.user.username %>
+<u>Comment:</u> <%= c.content %><br>
+<u>By:</u> <%= c.user.username %>
 <% end %>
 
 
