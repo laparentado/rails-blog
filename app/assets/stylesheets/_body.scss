@@ -1,14 +1,19 @@
-// h1, h2, h3, h4, h5{
-//   font-family: $secondary-font;
-//   text-transform: uppercase;
-// }
-//
-// body{
-//   font-family: $main-font;
-//   font-size: 13px;
-// }
+h1, h2, h3, h4, h5{
+  font-family: $secondary-font;
+  text-transform: uppercase;
+  color: $light-accent;
+}
+
+body{
+  font-family: $main-font;
+  font-size: 13px;
+  background-color: $background-color;
+}
 
 .yield{
-  border: 1px solid blue;
+  background-color: $light-color;
+  border-radius: 12px;
+  border: 1px solid $main-color;
   width: 1070px;
+  padding: 12px; 
 }

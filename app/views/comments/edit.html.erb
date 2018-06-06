@@ -1,6 +1,6 @@
 <h4>Edit Comment</h4>
 <%= form_for ([@blog, @comment]) do |f| %>
-<%= f.text_area :content %><br>
+<%= f.text_field :content %><br>
     <%= f.submit "update" %>
 <% end %>
 <%= link_to "delete comment", blog_comment_path, method: :delete,

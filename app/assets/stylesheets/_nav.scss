@@ -1,18 +1,17 @@
 .wrapper{
   grid-template-columns: 1fr 1fr 1fr;
-  border: 1px solid red;
   width: 1070px;
 }
 .head{
   grid-column-start: 1;
   grid-column-end: 2;
-  // display: inline-block;
+  display: inline-block;
   margin-left: 20px;
 }
 nav{
   grid-column-start: 2;
-  // grid-column-end: 3;
-  // font-family: $secondary-font;
+  grid-column-end: 3;
+  font-family: $secondary-font;
   font-size: 20px;
   text-transform: uppercase;
   text-align: center;
@@ -24,21 +23,32 @@ nav{
   grid-column-end: 4;
   margin-left: 270px;
   display: inline-block;
-  font-size: 15px;
+  margin-top: 50px;
+  float: right;
+  font-size: 12px;
+  color: $light-color;
 }
 
 a:link{
-  color: red;
+  color: $light-accent;
   text-decoration: none;
-  // font-family: $secondary-font;
-  font-size: 20px;
-  text-transform: uppercase
+  font-family: $secondary-font;
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
+a:hover{
+  color: $main-color;
+  text-decoration: underline;
+  font-family: $secondary-font;
+  font-size: 12px;
+  text-transform: uppercase;
 }
 
 a:visited{
-  color: red;
+  color: $light-accent;
   text-decoration: none;
-  // font-family: $secondary-font;
-  font-size: 20px;
-  text-transform: uppercase
+  font-family: $secondary-font;
+  font-size: 12px;
+  text-transform: uppercase;
 }
