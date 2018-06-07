@@ -29,9 +29,10 @@
     <% if logged_in? %>
     <div class="current">Logged In As: <a href="/users/<%= current_user.id %>"><%= current_user.username %></a></div></div>
     <% end %>
+    <div id="time">Current Time: <div id="clock"></div></div>
 <div class="yield">
     <%= yield %>
   </div>
-  <div id="time">Current Time: <div id="clock"></div></div>
+
   </body>
 </html>
