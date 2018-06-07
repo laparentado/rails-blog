@@ -13,17 +13,17 @@
 
   <body><div class="wrapper"><div class="head"><h1>Lori's Rails Blog</h1></div>
     <nav>
-      <%= link_to "home", root_path %>
+      <li><%= link_to "home", root_path %></li>
 
 
       <% if logged_in? %>
-      • <%= link_to "post a blog", new_blog_path %>
-      • <%= link_to "log out", "/logout", {method: "post"} %><br>
+      • <li><%= link_to "post a blog", new_blog_path %></li>
+      • <li><%= link_to "log out", "/logout", {method: "post"} %></li><br>
 
       <% end %>
       <% if !logged_in? %>
-      • <%= link_to "sign up", new_user_path %>
-      • <%= link_to "log in", login_path %>
+      • <li><%= link_to "sign up", new_user_path %></li>
+      • <li><%= link_to "log in", login_path %></li>
       <% end %>
     </nav>
     <% if logged_in? %>
@@ -32,5 +32,6 @@
 <div class="yield">
     <%= yield %>
   </div>
+  <div id="time">Current Time: <div id="clock"></div></div>
   </body>
 </html>
